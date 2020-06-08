@@ -9,6 +9,13 @@ import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import { Characters } from "./views/characters";
+import { Planets } from "./views/planets";
+import { Vehicles } from "./views/vehicles";
+import { SingleCharacter } from "./component/singleCharacter";
+import { SinglePlanet } from "./component/singlePlanet";
+import { SingleVehicle } from "./component/singleVehicle";
+import { SingleFilm } from "./component/singleFilm";
 
 //create your first component
 export const Layout = () => {
@@ -22,6 +29,13 @@ export const Layout = () => {
 				<ScrollToTop>
 					<Navbar />
 					<Switch>
+						<Route exact path="/films/:index" component={SingleFilm} />
+						<Route exact path="/vehicles/:index" component={SingleVehicle} />
+						<Route exact path="/planets/:index" component={SinglePlanet} />
+						<Route exact path="/characters/:index" component={SingleCharacter} />
+						<Route exact path="/vehicles" component={Vehicles} />
+						<Route exact path="/planets" component={Planets} />
+						<Route exact path="/characters" component={Characters} />
 						<Route exact path="/" component={Home} />
 						<Route path="/demo" component={Demo} />
 						<Route path="/single/:theid" component={Single} />
