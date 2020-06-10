@@ -4,7 +4,6 @@ import { Context } from "../store/appContext";
 export const SingleCharacter = props => {
 	const { store } = useContext(Context);
 	const { characters } = store;
-	console.log(props);
 
 	const img = [
 		"17ntIKwGjrC9mLVbde9xa_e_7SoH-Uv2V",

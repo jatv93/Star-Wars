@@ -1,12 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 export const Films = () => {
-	const { store } = useContext(Context);
+	const { store, actions } = useContext(Context);
 	const { films } = store;
-
-	console.log(films.results);
 
 	const img = [
 		"1PCPvLKXnMmUeKDuMbQnvVeoSqiI2eMGM",
@@ -42,7 +40,11 @@ export const Films = () => {
 													<Link to={"/films/" + index}>Learn More!</Link>
 												</button>
 
-												<button className="fav btn btn-outline-warning">&hearts;</button>
+												<button
+													className="fav btn btn-outline-warning"
+													onClick={() => actions.addFavorites(elem.title, "/films/" + index)}>
+													&hearts;
+												</button>
 											</div>
 										</div>
 									</div>

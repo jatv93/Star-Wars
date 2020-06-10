@@ -16,31 +16,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 			characters: {},
 			planets: {},
 			vehicles: {},
-			films: {}
+			films: {},
+			favorites: []
 		},
 		actions: {
-			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
-			},
-			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
-			},
-			changeColor: (index, color) => {
-				//get the store
+			addFavorites: newFavorite => {
 				const store = getStore();
-
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
-
-				//reset the global store
-				setStore({ demo: demo });
+				if (store.favorites.includes(newFavorite)) {
+					alert("This element already exists in favorites");
+				} else {
+					setStore({ favorites: store.favorites.concat(newFavorite) });
+				}
+			},
+			deleteFav: favIndex => {
+				const store = getStore();
+				const newFav = store.favorites.filter(index => index !== favIndex);
+				setStore(newFav);
 			},
 
 			getCharacters() {

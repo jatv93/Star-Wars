@@ -3,10 +3,8 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 export const Planets = () => {
-	const { store } = useContext(Context);
+	const { store, actions } = useContext(Context);
 	const { planets } = store;
-
-	console.log(planets.results);
 
 	const img = [
 		"1FHC6SdobIGqnUIe90P8oNqD2OZWxiEnP",
@@ -45,9 +43,11 @@ export const Planets = () => {
 												<Link to={"/planets/" + index}>Learn More!</Link>
 											</button>
 
-											<span>
-												<i className="far fa-heart" />
-											</span>
+											<button
+												className="fav btn btn-outline-warning"
+												onClick={() => actions.addFavorites(elem.name, "/planets/" + index)}>
+												&hearts;
+											</button>
 										</div>
 									</div>
 								</div>

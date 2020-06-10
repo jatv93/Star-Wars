@@ -5,8 +5,6 @@ export const SinglePlanet = props => {
 	const { store } = useContext(Context);
 	const { planets } = store;
 
-	console.log(props);
-
 	const img = [
 		"12hn92bGTVKamqj95QQH5nT8zcJmNp0tz",
 		"1FrqNMv-BXmqqKFO9g3_iu01BWkl1ZZx3",

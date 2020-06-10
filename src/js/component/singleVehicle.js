@@ -5,8 +5,6 @@ export const SingleVehicle = props => {
 	const { store } = useContext(Context);
 	const { vehicles } = store;
 
-	console.log(props);
-
 	const img = [
 		"12eefGd7wFI6bse96XGzdZe0EeJmNEl4X",
 		"14T57vqJg6p63snuugdXZbB3U5bxPPgdV",

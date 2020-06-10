@@ -1,13 +1,10 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
-import "../../styles/characters.scss";
 
 export const Characters = () => {
-	const { store } = useContext(Context);
+	const { store, actions } = useContext(Context);
 	const { characters } = store;
-
-	console.log(characters.results);
 
 	const img = [
 		"17ntIKwGjrC9mLVbde9xa_e_7SoH-Uv2V",
@@ -46,9 +43,11 @@ export const Characters = () => {
 												<Link to={"/characters/" + index}>Learn More!</Link>
 											</button>
 
-											<span>
-												<i className="far fa-heart" />
-											</span>
+											<button
+												className="fav btn btn-outline-warning"
+												onClick={() => actions.addFavorites(elem.name, "/characters/" + index)}>
+												&hearts;
+											</button>
 										</div>
 									</div>
 								</div>

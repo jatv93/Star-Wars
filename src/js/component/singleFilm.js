@@ -14,9 +14,6 @@ export const SingleFilm = props => {
 		"https://www.youtube.com/watch?v=5UnjrG_N8hU"
 	];
 
-	console.log(props);
-	console.log(videos);
-
 	return (
 		<>
 			<div className="container">
