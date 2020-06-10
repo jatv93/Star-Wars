@@ -2,6 +2,7 @@ h1{
     font-family: "Comic Sans MS", cursive, sans-serif;
     padding-bottom: 10px;
     padding-top: 10px;
+    color: white;
 }
 
 .far {
@@ -16,6 +17,7 @@ h1{
 
     
 }
+
 
 img{
 
@@ -69,6 +71,41 @@ img{
 }
 
 .fas{
-    float: right;
+    
+    display: inline;
+    padding-left: 10px;
 }
 
+body{
+    background-image: url("../img/fondo.jpg");
+    color: white;
+}
+
+.jumbotron{
+    background-color: black;
+}
+
+.navbar-light .navbar-nav .nav-link{
+    color:white;
+}
+
+.navbar-light .navbar-nav .nav-link:hover{
+    color: white;
+    text-decoration: underline;
+}
+
+
+.card-body{
+    background-color: rgb(39, 38, 38);
+}
+
+
+a:active {
+  color: white;
+}
+
+
+.card{
+
+    border: 2px solid rgba(17, 17, 17, 0.125)
+}

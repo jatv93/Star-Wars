@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+import { element } from "prop-types";
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
@@ -20,18 +23,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 			favorites: []
 		},
 		actions: {
-			addFavorites: newFavorite => {
+			addFavorites: (newFavorite, link) => {
 				const store = getStore();
-				if (store.favorites.includes(newFavorite)) {
-					alert("This element already exists in favorites");
+				if (store.favorites.map(element => element.newFavorite).indexOf(newFavorite) == -1) {
+					setStore({ favorites: store.favorites.concat({ newFavorite: newFavorite, link: link }) });
 				} else {
-					setStore({ favorites: store.favorites.concat(newFavorite) });
+					alert("This element already exists in favorites");
 				}
 			},
-			deleteFav: favIndex => {
+			deleteFav: favElem => {
 				const store = getStore();
-				const newFav = store.favorites.filter(index => index !== favIndex);
-				setStore(newFav);
+				store.favorites.splice(favElem, 1);
+				setStore({ favorites: store.favorites });
 			},
 
 			getCharacters() {

@@ -44,7 +44,7 @@ export const Vehicles = () => {
 											</button>
 
 											<button
-												className="fav btn btn-outline-warning"
+												className="fav btn btn-outline-danger"
 												onClick={() => actions.addFavorites(elem.name, "/vehicles/" + index)}>
 												&hearts;
 											</button>

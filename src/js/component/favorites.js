@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
 
 export const Favorites = () => {
 	const { store, actions } = useContext(Context);
@@ -21,7 +22,7 @@ export const Favorites = () => {
 						store.favorites.map((elem, index) => {
 							return (
 								<li className="dropdown-item" key={index}>
-									{elem}
+									<Link to={elem.link}>{elem.newFavorite}</Link>
 									{""}
 									<span
 										className="fas fa-trash-alt"
